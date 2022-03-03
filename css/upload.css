@@ -1,0 +1,10 @@
+﻿.up
+{
+    height:300px;
+    width:600px;
+    border-style:dotted;
+}
+.op
+{
+    opacity:0;
+}

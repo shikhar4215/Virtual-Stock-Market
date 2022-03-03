@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins=400,500,700');
+
+html,body{
+  height:100%;
+  width:100%;
+  font-family: 'Poppins',sans-serif;
+  color:#222;
+}
+.navbar
+{
+  padding: .8rem;
+}
+.navbar-nav li{
+  padding-right: 20px;
+
+}
+.nav-link
+{
+  font-size:1.1em !important;
+}
+.jumbotron
+{
+  padding: 1rem;
+  border-radius: 0;
+}
+.padding
+{
+  padding-bottom: 2rem;
+}
+.welcome
+{
+  width:75%;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+.welcom hr
+{
+  border-top: 2px solid #b4b4b4;
+  width:95%;
+  margin-top: .3rem;
+  margin-bottom: 1rem;
+}
+.fa-code
+{
+  color: #e54d26;
+  font-size: 4em;
+  margin: 1rem;
+}
+.fa-bold
+{
+  color: #563d7c;
+  font-size: 4em;
+  margin: 1rem;
+}
+.fa-css3
+{
+  color: #2163af;
+  font-size: 4em;
+  margin: 1rem;
+}
+.fun
+{
+  width:100%;
+  margin:2rem;
+}
+.gif
+{
+  max-width:100%;
+}
+.socila
+{
+  font-size: 4.5em;
+  padding: 3rem;
+}
+footer{
+  background-color: #3f3f3f;
+  color:#d5d5d5;
+  padding-top: 2rem;
+}
+hr .light
+{
+  border-top: 1px solid #d5d5d5;
+  width:75%;
+  margin-top:.8rem;
+  margin-bottom: 1rem;
+}
+footer a
+{
+  color: #d5d5d5;
+  margin:5%;
+}
+.hov2:hover
+{
+  color:#00acee;
+}
+.hov3:hover
+{
+  color: transparent;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+@media (max-width: 992px)
+{
+  .socila a
+  {
+    font-size:4rem;
+    padding:2rem;
+  }
+
+}
+@media (max-width: 768px)
+{
+  .display-4
+  {
+    font-size:200%;
+  }
+  .socila a
+  {
+    font-size:2.5em;
+    padding:1.5rem;
+  }
+}
+@media (max-width: 576px)
+{
+  .display-4
+  {
+    font-size:160%;
+  }
+  .socila a
+  {
+    font-size:2rem;
+    padding:.7rem;
+  }
+}
+.search-input
+{
+  background:transparent;
+  border:none;
+  border-radius: 0;
+  border-bottom: 2px solid #999;
+  outline:none;
+  width:100%;
+}
+.search-input:focus{
+  background:transparent;
+  box-shadow:none;
+  border-bottom:2px solid #dc3545;
+};
+
+.search-button
+{
+  border-radius:50%;
+  padding: 10px 16px;
+  transition:all .4s;
+}
+.search-button:hover{
+  background-color: #eee;
+  transform:translateY(-1px);
+}

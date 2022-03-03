@@ -1,0 +1,67 @@
+* {
+    font-family: Poppins-Regular,sans-serif;
+}
+
+.fs {
+    width: 50%;
+    margin: auto;
+}
+
+
+.t1 {
+    box-shadow: none !important;
+    border: none;
+    background-color: none;
+    outline: none;
+    border-bottom: 1px solid #ccc !important;
+}
+
+.lrg {
+    position: relative;
+    top: -65px;
+    font-size: 12px;
+}
+
+.lg {
+    position: relative;
+    top: -25px;
+    font-size: 12px;
+}
+
+.t1:hover, .t1:focus {
+    border-bottom: 1.5px solid blue;
+}
+
+.l1 {
+    position: relative;
+    top: -25px;
+}
+
+.lrg, .ldt, .lim {
+    top: -60px;
+    font: 12px;
+}
+
+.llg, .lpw1, .lfn, .lmn, .lln, .lem1, .lpw2, .lcpw1, .lad1, .lcon1, .lst1, .lct1, .lph, .lnn, .lcn, .lcp, .lem2, .lgs, .lcin, .lpw3, .lcpw2, .lad2, .lcon2, .lst2, .lct2, .lsec,.lpin,.lupin {
+    transition: 0.4s;
+}
+
+.lig:focus ~ .llg, .lig:valid ~ .llg, .pw1:focus ~ .lpw1, .pw1:valid ~ .lpw1, .fn:focus ~ .lfn, .fn:valid ~ .lfn, .mn:focus ~ .lmn, .mn:valid ~ .lmn, .ln:focus ~ .lln, .ln:valid ~ .lln, .em1:focus ~ .lem1, .em1:valid ~ .lem1, .pw2:focus ~ .lpw2, .pw2:valid ~ .lpw2, .cpw1:focus ~ .lcpw1, .cpw1:valid ~ .lcpw1, .con1:focus ~ .lcon1, .con1:valid ~ .lcon1, .st1:focus ~ .lst1, .st1:valid ~ .lst1, .ct1:focus ~ .lct1, .ct1:valid ~ .lct1, .ph:focus ~ .lph, .ph:valid ~ .lph, .n:focus ~ .lnn, .n:valid ~ .lnn, .cn:focus ~ .lcn, .cn:valid ~ .lcn, .cp:focus ~ .lcp, .cp:valid ~ .lcp, .em2:focus ~ .lem2, .em2:valid ~ .lem2, .gs:focus ~ .lgs, .gs:valid ~ .lgs, .cin:focus ~ .lcin, .cin:valid ~ .lcin, .pw3:focus ~ .lpw3, .pw3:valid ~ .lpw3, .cpw2:focus ~ .lcpw2, .cpw2:valid ~ .lcpw2, .con2:focus ~ .lcon2, .con2:valid ~ .lcon2, .st2:focus ~ .lst2, .st2:valid ~ .lst2, .ct2:focus ~ .lct2, .ct2:valid ~ .lct2, .sec:focus ~ .lsec, .sec:valid ~ .lsec, .pin:focus ~ .lpin, .pin:valid ~ .lpin, .upin:focus ~ .lupin, .upin:valid ~ .lupin {
+    font-size: 12px;
+    top: -60px;
+}
+
+.ad1:focus ~ .lad1, .ad1:valid ~ .lad1, .ad2:focus ~ .lad2, .ad2:valid ~ .lad2 {
+    font-size: 12px;
+    top: -80px;
+}
+
+.file {
+    width: 50%;
+}
+
+.log {
+    margin-left: 70%;
+    width: 70px;
+    height: 70px;
+}

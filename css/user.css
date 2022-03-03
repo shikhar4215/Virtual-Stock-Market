@@ -1,0 +1,23 @@
+.sidebar
+{
+  height:100vh;
+  background: white;
+  
+}
+.card-comman
+{
+  width:100%;
+  box-shadow: 5px 5px #f5f5f;
+  border:none;
+}
+.vl 
+{
+  border-left: 2px solid #ccc;
+  height: 70vh;
+}
+.a
+ {
+    height: 255px;
+    width: 650px;
+ }
+ 

@@ -1,0 +1,158 @@
+﻿
+        /*
+    DEMO STYLE
+        /* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+        
+        
+        /*
+    DEMO STYLE
+*/@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+        body
+        {
+            font-family: 'Poppins' , sans-serif;
+            background: #fafafa;
+        }
+        
+        .navbar
+        {
+            padding: 15px 10px;
+            background: #fff;
+            border: none;
+            
+            margin-bottom: 40px;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-btn
+        {
+            box-shadow: none;
+            
+            border: none;
+        }
+        
+        /* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.wrapper
+        {
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+        }
+#sidebar {
+    max-width: 250px;
+    min-width: 250px;
+    transition: all 0.3s;
+    margin-left: 0px;
+}
+            #sidebar.active {
+                
+                margin-left:-250px;
+               
+            }
+        #sidebar .sidebar-header
+        {
+            padding: 20px;
+            background: white;
+            color:Black;
+        }
+       
+        
+        
+        
+
+        
+        /* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content
+        {
+            width: 100%;
+            min-height: 100vh;
+            transition: all 0.3s;
+        }
+        /* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 762px)
+        {
+            #sidebar
+            {
+                margin-left:-250px;
+                height:100vh
+            }
+            #sidebar.active
+            {
+                margin-left: 0;
+            }
+            #sidebarCollapse span
+            {
+                display: none;
+            }
+        
+        .sidebar-link:hover
+{
+
+  background-color:#444;
+  border-radius:5px;
+}
+.sidebar-link
+{
+  transition: 0.4s;
+}
+.bb
+{
+  border-bottom:  1px groove #eee;
+}
+.current:focus
+{
+  transition: 0.4s;
+  background-color: grey;
+  border-radius: 7px;
+  box-shadow: 2px 5px 10px #111;
+  transition:all .4s;
+ 
+}
+.search-input
+{
+  background:black;
+  border:none;
+  border-bottom: 2px solid #999;
+}
+.search-input:focus{
+  background:transparent;
+  box-shadow:none;
+  border-bottom:2px solid #dc3545;
+  
+}
+
+.search-button
+{
+  border-radius:50%;
+  padding: 10px 16px;
+  transition:all .4s;
+  color:Gray;
+}
+.search-button:hover{
+  background-color: #eee;
+  transform:translateY(-1px);
+}
+.search-button:focus{
+  background-color: #red;
+  transform:translateY(-1px);
+  box-shadow:1px 2px #ccc;
+}
+.icon-parent{
+  position:relative;
+}
+.icon-bullet:after
+{
+  content:"";
+  position:absolute;
+  top:7px;
+  height:12px;
+  width:12px;
+  background-color: #f44336;
+  border-radius: 50%;
+}

@@ -1,0 +1,36 @@
+li{
+  display: inline;
+  margin-left: 1%;
+}
+.t
+{
+  outline: none;
+  border: none;
+  border-bottom:solid 1px;
+  background: none;
+}
+.sp
+{
+
+}
+@media only screen and (max-width:980px)
+{
+  .card-com
+  {
+    margin-top:500px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 35px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .card-com
+  {
+    margin-left:35%;
+    margin-right:35%;
+    margin-top:15%;
+    width: 100%;
+    font-size: 15px;
+  }
+
+}
