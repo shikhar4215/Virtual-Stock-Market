@@ -1,0 +1,406 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Index.master.cs" Inherits="VSM_Final.Index" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>VSM</title>
+    <link href="css/company.css" rel="stylesheet" />
+    <link href="css/gog.css" rel="stylesheet" />
+    <link href="css/home.css" rel="stylesheet" />
+
+    <style type="text/css">
+        .wrapper {
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+        }
+
+
+        .sidebar {
+            transition: all 0.4s;
+            width: 250px;
+            height: 100vh;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            overflow-y: scroll;
+        }
+        /* width */
+        ::-webkit-scrollbar {
+            width: 2px;
+        }
+
+        /* Track */
+        /*::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px white;
+            border-radius: 10px;
+        }*/
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background-color: gray;
+            border-radius: 5px;
+        }
+
+        Handle on hover
+        ::-webkit-scrollbar-thumb:hover {
+            background: #F5F2D0;
+        }
+
+        .sidebar.active {
+            transition: all 0.4s;
+            width: 76px;
+            height: 100vh;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+
+            .sidebar.active li a {
+                text-align: center;
+            }
+
+            /*.sidebar.active li:hover {
+                text-align: center;
+                display: block;
+                box-shadow: 2px;
+                background-color: white;
+                width: 100%;
+            }*/
+
+            .sidebar.active .title {
+                visibility: hidden;
+            }
+
+            .sidebar.active .icon {
+                transition: all 0.4s;
+                font-size: xx-large;
+            }
+
+        .icon:hover {
+        }
+
+
+
+        .sidebar .title {
+            font-size: 20px;
+        }
+
+        #content {
+            width: 100%;
+            min-height: 100vh;
+            transition: all 0.3s;
+            overflow-y: scroll;
+            top: 0px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+    <link href="bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/form.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="http://localhost:58381/fontawesome-free-5.12.1-web/css/all.css" rel="stylesheet" />
+    <link href="http://localhost:58381/fontawesome-free-5.12.1-web/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="wrapper">
+            <nav class="sidebar bg-dark">
+                <%
+                    if (Session["UserId"] != null)
+                    {
+                        if (Session["Type"].ToString() == "user")
+                        {
+                %>
+
+                <h2 class="text-center font-weight-bold mt-4">VSM </h2>
+                <hr />
+
+                <center>
+                        <asp:Image ID="Image1" ImageUrl="~/Profile/download.png" runat="server" CssClass="rounded-circle img-fluid" Width="100" Height="90" />
+                        <h4> Shan </h4>
+                    </center>
+
+                <hr />
+                <ul class="nav-link list-unstyled">
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/User/Dashboard.aspx"><span class="fa fa-home icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Dashboard</span></a>
+                    </li>
+
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/User/Profile.aspx"><span class="fa fa-id-card icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Profile</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/User/Portfolio.aspx"><span class="fa fa-money-bill-alt icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Portfolio</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/User/WatchList.aspx"><span class="fa fa-binoculars icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">WatchLsit</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/User/Bank.aspx"><span class="fa fa-piggy-bank icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Bank</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/User/Feedback.aspx"><span class="fa fa-comments icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">FeedBack</span></a>
+                    </li>
+                     <li class="mb-5">
+                        <a href="http://localhost:58381/User/OrderManagement.aspx"><span class="fa fa-flag icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Manage Order</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/Home.aspx"><span class="fa fa-home icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Home</span></a>
+                    </li>
+                </ul>
+
+                <%
+                    }
+                    else
+                    {
+                %>
+
+                <h4 class="text-center text-white">Admin </h4>
+                <hr />
+                <center>
+                        <asp:Image ID="profile" ImageUrl="~/images/PHOTO.jpg" runat="server" CssClass="rounded-circle img-fluid" Width="100" Height="90" />
+                        <h4> Shikhar </h4>
+                    </center>
+                <hr />
+                <ul class="nav-link list-unstyled">
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/Admin/Dashboard.aspx"><span class="fa fa-home icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Dashboard</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/Admin/UserManagement.aspx"><span class="fa fa-users icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Manage Users</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/Admin/AdManagement.aspx"><span class="fas fa-ad	 icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Advertisement</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/Admin/CompanyManagement.aspx"><span class="fa fa-building icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Company</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/Admin/ShareManagement.aspx"><span class="fa fa-flag icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Manage Shares </span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/Admin/FeedbackManagement.aspx"><span class="fa fa-comments icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Feedback</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/Admin/SalesMonitor.aspx"><span class="fa fa-desktop icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Monitor Sales</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/Admin/SectorManagement.aspx"><span class="fa fa-industry icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Manage Sector</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/Home.aspx"><span class="fa fa-home icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Home</span></a>
+                    </li>
+                </ul>
+
+                <%
+                        }
+                    }
+                    else if (Session["CompanyId"] != null)
+                    {
+                %>
+
+                <h2 class="text-center text-white font-weight-bold mt-4">VSM </h2>
+                <hr />
+                <center>
+                        <asp:Image ID="Image2" ImageUrl="~/images/5.jpeg" runat="server" CssClass="rounded-circle img-fluid" Width="100" Height="90" />
+                        <h4> Sun Farma </h4>
+                    </center>
+                <hr />
+                <ul class="nav-link list-unstyled">
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/Company/Dashboard.aspx"><span class="fa fa-home icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Dashboard</span></a>
+                    </li>
+
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/Company/Profile.aspx"><span class="fa fa-user icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Profile</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/Company/ShareHolders.aspx"><span class="fa fa-users icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Share Holders</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/Company/SubmitNotice.aspx"><span class="fa fa-clipboard icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Submit Notic</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/Company/Documents.aspx"><span class="fa fa-file icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Upload Docs</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/Feedback.aspx"><span class="fa fa-comments icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Feedback</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/Home.aspx"><span class="fa fa-home icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Home</span></a>
+                    </li>
+                </ul>
+
+                <%
+                    }
+                    else
+                    {
+                %>
+                <center><i class="fa fa-chart-bar fa-3x text-success mt-4"></i></center>
+                <h3 class="text-white text-center mt-2 mb-4 font-weight-bold">VSM</h3>
+                <hr />
+
+
+
+                <ul class="nav-link list-unstyled">
+                    <li class=" mb-5">
+                        <a href="#"><span class="fa fas fa-tasks icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Market Activity</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="#"><span class="fa fa-flag icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">IPO</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="#"><span class="fa fa-newspaper-o icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">News</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="#"><span class="fa fa-info icon fa-2x text-secondary ml-2"></span><span class="title text-decoration-none ml-1 text-secondary">AboutUs</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="#"><span class="fa fa-address-book icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">ContactUs</span></a>
+                    </li>
+                    <li class="mb-5">
+                        <a href="http://localhost:58381/Home.aspx"><span class="fa fa-home icon fa-2x text-secondary"></span><span class="title text-decoration-none ml-1 text-secondary">Home</span></a>
+                    </li>
+                </ul>
+
+                <%
+                    }
+                %>
+            </nav>
+            <div id="content">
+                <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+                    <button type="button" id="sidebarCollapse" class="btn btn-secondary mr-lg-5">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <div class="navbar-brand ml-3">VSM</div>
+                    <div class="collapse navbar-collapse" id="n1">
+                        <ul class="navbar-nav m-auto mt-1 mb-1">
+                            <li class="nav-item m-1 ml-5">
+                                <asp:TextBox ID="txtSearch" CssClass="form-control" runat="server"></asp:TextBox>
+                            </li>
+                            <li class="nav-item m-1">
+                                <asp:Button ID="btnSearch" CssClass="btn btn-info mr-1 d-flex float-right" runat="server" Text="Search" OnClick="btnSearch_Click" TabIndex="1000"></asp:Button></li>
+                        </ul>
+                        <%
+                            if (Session["UserId"] != null || Session["CompanyId"] != null)
+                            {
+                        %>
+                        <asp:Button ID="btnLogout" CssClass="btn btn-secondary mr-2" runat="server" Text="Logout" OnClick="btnLogout_Click"></asp:Button>
+                        <%
+                            }
+                            else
+                            {
+                        %>
+                        <a id="btnlogin" href="http://localhost:58381/Login.aspx" class="btn btn-secondary mr-2">Login</a>
+                        <a id="btnReg" href="UserRegistration.aspx" class="btn btn-secondary">Sign Up</a>
+                        <%
+                            }
+                        %>
+                    </div>
+                    <button class="navbar-toggler mt-2" type="button" data-toggle="collapse" data-target="#n1">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+
+
+                <footer id="footer" class="bg-dark my-footer mt-5">
+                    <div class="container-fluid ">
+                        <div class="row text-left">
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 ml-5">
+                                <hr class="light">
+                                <p>
+                                    <a href="#"><i class="fa fa-envelope text-info fa-2x"></i></a>
+                                    <label class="text text-light">
+                                        abc@VSM.com</label>
+                                </p>
+                                <p>
+                                    <a href="#"><i class=" fa fa-phone text-secondary fa-2x"></i></a>
+                                    <label class="text text-light  txt3">
+                                        +1234567890</label>
+                                </p>
+                                <p>
+                                    <a href="#"><i class="fa fa-map-marker text-danger fa-3x"></i></a>
+                                    <label class="text text-light">
+                                        Vadodara<br>
+                                        Gujarat,India</label>
+                                </p>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 ml-5">
+                                <hr class="light">
+                                <p>
+                                    <label class="font-weight-bold text-light">
+                                        POPULAR LINKS</label>
+                                </p>
+                                <p>
+                                    <a href="career.aspx" class="text-light txt">CAREERS</a>
+                                <p>
+                                <p>
+                                    <a href="Adverisement.aspx" class="text-light txt">ADVERTISE</a>
+                                </p>
+                                <p>
+                                    <a href="#" class="text-light">MARKETSITE</a>
+                                </p>
+                                <p>
+                                    <a href="disclaimer.aspx" class="text-light">DISCLAIMER</a>
+                                </p>
+                                <p class="pt-5">
+                                    <a href="#" class="text-light ">SITEMAP</a>
+                                </p>
+                                <p>
+                                    <a href="privacy.aspx" class="text-light txt">PRIVACY</a>
+                                </p>
+                                <p>
+                                    <a href="copyright.aspx" class="text-light txt">COPYRIGHT</a>
+                                </p>
+                                <p>
+                                    <a href="legal.aspx" class="text-light txt">LEGAL</a>
+                                </p>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 ml-5">
+                                <hr class="light" />
+                                <label class="font-weight-bold text-light">
+                                    PLATFORM INFO</label><br />
+                                <a href="aboutus.aspx" class="text-light">ABOUT US</a><br />
+                                <a href="contactus.aspx" class="text-light">CONTACT US</a><br />
+                                <h5 class="text-light font-weight-bold pt-5">Follow US</h5>
+                                <br />
+                                <a href="#"><i class="fab fa-facebook-f fa-3x pr-4 hov1"></i></a><a href="#"><i class="fab fa-twitter fa-3x pr-4 hov2"></i></a><a href="#"><i class="fab fa-instagram fa-3x pr-4 hov3"></i></a><a href="#"><i
+                                    class="fab fa-linkedin fa-3x pr-4 hov4"></i></a>
+                            </div>
+                            <div class="col-12">
+                                <hr class="" />
+                                <h5 class="text-center text-5x font-weight-bold">&copy;2020,VSM, Inc. All Rights Reserved.</h5>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        </footer>
+        
+    </form>
+
+    <script type="text/javascript" src="http://localhost:58381/bootstrap-4.4.1-dist/js/jquery.js"></script>
+    <script type="text/javascript" src="http://localhost:58381/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('#sidebarCollapse').on('click', function () {
+                $('.sidebar').toggleClass('active');
+            });
+        });
+
+    </script>
+</body>
+</html>
